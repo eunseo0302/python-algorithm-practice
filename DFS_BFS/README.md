@@ -1,6 +1,3 @@
-from IPython.display import Markdown
-
-readme_content = """
 # 🧠 DFS / BFS Problems
 
 ---
@@ -80,6 +77,4 @@ readme_content = """
 - ❌ `map()`에 `int` 없이 `map(sys.stdin.readline().split())`만 써서 TypeError 발생
 - ❌ 입력을 한 줄씩 받는 구조를 이해하는 데 시간이 조금 걸림
 - ✅ 수정 후 완전히 입력 형식에 맞추고, 대각선 방향까지 정확히 탐색 완료
-"""
 
-Markdown(readme_content)
