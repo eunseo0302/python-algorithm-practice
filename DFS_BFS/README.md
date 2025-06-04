@@ -8,13 +8,13 @@
 
 ### 🧠 Key Concepts
 - Use adjacency list for undirected graph
-- Track visited nodes with `visited[]`
-- Run DFS for every unvisited node to count connected components
+- Track visited nodes using `visited[]`
+- Run DFS on every unvisited node to count connected components
 
-### ⚠️ What I got stuck on
-- ❌ Mistakenly wrote `visited(i)` instead of `visited[i]` (syntax error)
-- ❌ Initially forgot to increase component count correctly
-- ✅ Understood that for disconnected graphs, DFS must run for all nodes
+### ⚠️ What I Got Stuck On
+- ❌ Mistakenly wrote `visited(i)` instead of `visited[i]` due to C++ habit
+- ❌ Forgot to increase the component count in the correct place
+- ✅ Learned that DFS must be run for all nodes in disconnected graphs
 
 ---
 
@@ -23,14 +23,14 @@
 - **Link**: [Baekjoon 1260](https://www.acmicpc.net/problem/1260)
 
 ### 🧠 Key Concepts
-- Compare traversal order of DFS (recursive) and BFS (queue)
-- Ensure visiting nodes in ascending order
-- Use `deque` for BFS implementation
+- Compare traversal order of DFS (recursive) and BFS (queue-based)
+- Ensure nodes are visited in ascending order
+- Use `deque` for efficient BFS
 
-### ⚠️ What I got stuck on
-- ❌ Used `visited(i)` instead of `visited[i]` again (Python syntax habit from C++)
-- ❌ BFS와 DFS 순서 출력을 구분하지 않음
-- ✅ 익숙해진 이후에는 오히려 두 알고리즘의 차이를 명확히 이해함
+### ⚠️ What I Got Stuck On
+- ❌ Used `visited(i)` again instead of `visited[i]` (syntax issue)
+- ❌ Didn't separate DFS and BFS traversal orders correctly at first
+- ✅ After correcting, clearly understood the difference in search order
 
 ---
 
@@ -39,42 +39,41 @@
 - **Link**: [Baekjoon 2606](https://www.acmicpc.net/problem/2606)
 
 ### 🧠 Key Concepts
-- Connected components from node 1
-- Count all nodes visited except the starting node
-- Simple graph traversal with BFS
+- Start BFS from node 1
+- Count all reachable nodes except the start
+- BFS traversal to explore one connected component
 
-### ⚠️ What I got stuck on
-- ❌ `cnt` 변수를 함수 밖에서 쓸 때 `global` 선언을 잊어서 런타임 에러 발생
-- ✅ 함수 내에서 `cnt`를 선언하고 반환하는 방식으로 깔끔하게 수정
+### ⚠️ What I Got Stuck On
+- ❌ Forgot to declare `cnt` as global when used outside function
+- ✅ Changed to a local `cnt` and returned the count — cleaner and safer
 
 ---
 
 ## ✅ Problem: Baekjoon 1012 - Organic Cabbage
-- **Category**: 2D BFS
+- **Category**: 2D Grid, BFS
 - **Link**: [Baekjoon 1012](https://www.acmicpc.net/problem/1012)
 
 ### 🧠 Key Concepts
-- Grid traversal using BFS
-- Count connected components in 2D matrix
+- Count connected components in a 2D grid using BFS
+- Use `arr[y][x]` for proper coordinate access
 - Handle multiple test cases
 
-### ⚠️ What I got stuck on
-- ❌ 처음에 `arr[b][a]` 순서를 `arr[a][b]`로 잘못 입력해 틀림
-- ✅ 문제 조건이 x, y 순서라는 것을 보고 배열 접근을 `arr[y][x]`로 고침
+### ⚠️ What I Got Stuck On
+- ❌ Mistaken coordinate access: used `arr[a][b]` instead of `arr[b][a]`
+- ✅ Fixed by correctly mapping input (x, y) → grid[y][x]
 
 ---
 
 ## ✅ Problem: Baekjoon 4963 - Number of Islands
-- **Category**: 2D BFS (8 directions)
+- **Category**: 2D Grid, BFS with 8 directions
 - **Link**: [Baekjoon 4963](https://www.acmicpc.net/problem/4963)
 
 ### 🧠 Key Concepts
-- Use 8-directional BFS with dx, dy vectors
-- Handle multiple maps with `while True:` and break on `0 0`
-- Represent land with 1 and sea with 0
+- 8-directional grid traversal using `dx` and `dy` vectors
+- Infinite input loop with `while True:` and break on `0 0`
+- Mark all connected land cells (1s)
 
-### ⚠️ What I got stuck on
-- ❌ `map()`에 `int` 없이 `map(sys.stdin.readline().split())`만 써서 TypeError 발생
-- ❌ 입력을 한 줄씩 받는 구조를 이해하는 데 시간이 조금 걸림
-- ✅ 수정 후 완전히 입력 형식에 맞추고, 대각선 방향까지 정확히 탐색 완료
-
+### ⚠️ What I Got Stuck On
+- ❌ Missed `int` conversion in `map(int, input().split())` → caused TypeError
+- ❌ Initially misunderstood line-by-line input format
+- ✅ Corrected input and handled all 8 directions properly
