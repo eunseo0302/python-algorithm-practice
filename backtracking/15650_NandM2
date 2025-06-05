@@ -1,0 +1,16 @@
+import sys
+
+n, m = map(int, sys.stdin.readline().split())
+
+path = []
+
+def backtrack(x):
+    if len(path) == m:
+        print(*path)
+        return
+    for i in range(x, n + 1):
+        path.append(i)
+        backtrack(i + 1)
+        path.pop()
+
+backtrack(1)
